@@ -7,6 +7,12 @@ import {
 } from 'react-native'
 
 export default class Login extends Component {
+    constructor(props) {
+      super(props);
+      this.state = { username: null, password: null }
+    }
+
+
     render() {
         return (
             <SafeAreaView style={styles.container}>
@@ -29,15 +35,19 @@ export default class Login extends Component {
                                     keyboardType='email-address'
                                     returnKeyType='next'
                                     autoCorrect={false}
-                                    onSubmitEditing={()=> this.refs.txtPassword.focus()}
+                                    onSubmitEditing={ (uname) => this.setState({ username: uname })
+                                  }
                                 />
                                 <TextInput style={styles.input}
                                     placeholder="Enter password"
                                     placeholderTextColor='rgba(255,255,255,0.8)'
                                     returnKeyType='go'
-                                    secureTextEntry
+                                    secureTextEntry={true}
                                     autoCorrect={false}
                                     ref={"txtPassword"}
+                                    onSubmitEditing={
+                                      (pwd) => this.setState({ password: pwd })
+                                    }
                                 />
                                 <TouchableOpacity style={styles.buttonContainer}>
                                     <Text style={styles.buttonText}>SIGN IN</Text>
@@ -71,8 +81,8 @@ const styles = StyleSheet.create({
     logoContainer: {
         alignItems: 'center',
         flex: 1,
-        marginBottom: 180,
-        marginTop: 10
+        marginBottom: '45%',
+        marginTop: '5%'
     },
     title: {
         color: 'white',
@@ -80,7 +90,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 5,
         opacity: 0.9,
-        marginBottom: 10
+        marginBottom: '5%'
     },
     infoContainer: {
         position: 'absolute',
@@ -114,6 +124,6 @@ const styles = StyleSheet.create({
     image: {
       height: 100,
       width: 100,
-      marginBottom: 10
+      marginBottom: '5%'
     }
 })
