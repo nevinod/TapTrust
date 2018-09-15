@@ -5,37 +5,15 @@ import {
     TextInput, SafeAreaView, Keyboard, TouchableOpacity,
     KeyboardAvoidingView, Linking
 } from 'react-native'
-import { createStackNavigator } from 'react-navigation';
-import SplashScreen from './Splash'
-import AuthHomeScreen from './AuthHome'
 
-export default class LoginScreen extends Component {
+export default class RegisterScreen extends Component {
     constructor(props) {
       super(props);
-
-      this.onPress = this.onPress.bind(this)
-      this.state = { username: null, password: null , timePassed: false}
-    }
-
-    componentDidMount() {
-      setTimeout( () => {
-        this.setTimePassed();
-      }, 2000)
-    }
-
-    setTimePassed() {
-      this.setState({timePassed: true});
-    }
-
-    onPress = () => {
-      this.props.navigation.navigate('AuthHomeScreen')
+      this.state = { username: null, password_one: null, password_two: null }
     }
 
 
     render() {
-      if (!this.state.timePassed) {
-        return <SplashScreen />
-      } else {
         return (
             <SafeAreaView style={styles.container}>
                 <StatusBar barStyle="light-content" />
@@ -48,7 +26,7 @@ export default class LoginScreen extends Component {
                                 source={require('../src/fingerprint.png')}
                               />
 
-                              <Text style={styles.title}>TapTrust Login</Text>
+                              <Text style={styles.title}>Create Your Account</Text>
                             </View>
                             <View style={styles.infoContainer}>
                                 <TextInput style={styles.input}
@@ -61,25 +39,34 @@ export default class LoginScreen extends Component {
                                   }
                                 />
                                 <TextInput style={styles.input}
-                                    placeholder="Password"
+                                    placeholder="Enter Password"
                                     placeholderTextColor='rgba(255,255,255,0.8)'
                                     returnKeyType='go'
                                     secureTextEntry={true}
                                     autoCorrect={false}
                                     ref={"txtPassword"}
                                     onSubmitEditing={
-                                      (pwd) => this.setState({ password: pwd })
+                                      (pwd) => this.setState({ password_one: pwd_one })
                                     }
                                 />
-                                <TouchableOpacity
-                                  style={styles.buttonContainer}
-                                  onPress={() => this.props.navigation.navigate('AuthHome')}>
-                                  <Text style={styles.buttonText}>Login</Text>
+                                <TextInput style={styles.input}
+                                    placeholder="Confirm Password"
+                                    placeholderTextColor='rgba(255,255,255,0.8)'
+                                    returnKeyType='go'
+                                    secureTextEntry={true}
+                                    autoCorrect={false}
+                                    ref={"txtPassword"}
+                                    onSubmitEditing={
+                                      (pwd) => this.setState({ password_two: pwd_two })
+                                    }
+                                />
+                                <TouchableOpacity style={styles.buttonContainer}>
+                                    <Text style={styles.buttonText}>Create Account</Text>
                                 </TouchableOpacity>
 
                                 <Text style={{color: 'white', marginTop: 10}}
-                                  onPress={() => this.props.navigation.navigate('Register')}>
-                                  Create New Account
+                                  onPress={() => this.props.navigation.navigate('Login')}>
+                                  Already have an account? Login
                                 </Text>
 
                                 <Text style={{color: 'white', marginBottom: 10}}
@@ -94,10 +81,8 @@ export default class LoginScreen extends Component {
 
             </SafeAreaView>
         )
-      }
     }
 }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -133,8 +118,7 @@ const styles = StyleSheet.create({
         color: '#FFF',
         marginBottom: 15,
         paddingHorizontal: 10,
-        borderRadius: 10,
-        fontSize: 20
+        borderRadius: 10
     },
     buttonContainer: {
         backgroundColor: 'white',

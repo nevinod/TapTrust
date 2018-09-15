@@ -1,4 +1,4 @@
-package com.splashlogin;
+package com.temptap;
 
 import android.app.Application;
 
