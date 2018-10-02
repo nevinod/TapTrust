@@ -5,6 +5,7 @@ import SplashScreen from './components/Splash'
 import LoginScreen from './components/Login'
 import RegisterScreen from './components/Register'
 import AuthHomeScreen from './components/AuthHome'
+import AuthApprovalScreen from './components/AuthApproval'
 
 
 export default createStackNavigator({
@@ -16,6 +17,9 @@ export default createStackNavigator({
   },
   AuthHome: {
     screen: AuthHomeScreen
+  },
+  AuthApproval: {
+    screen: AuthApprovalScreen
   }
 },{
   navigationOptions:{

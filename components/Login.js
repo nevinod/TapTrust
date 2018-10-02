@@ -8,6 +8,9 @@ import {
 import { createStackNavigator } from 'react-navigation';
 import SplashScreen from './Splash'
 import AuthHomeScreen from './AuthHome'
+import AuthApprovalScreen from './AuthApproval'
+
+// Login screen, no API calls yet to confirm if username/pw is correct
 
 export default class LoginScreen extends Component {
     constructor(props) {
@@ -28,7 +31,7 @@ export default class LoginScreen extends Component {
     }
 
     onPress = () => {
-      this.props.navigation.navigate('AuthHomeScreen')
+      this.props.navigation.navigate('AuthHome')
     }
 
 
