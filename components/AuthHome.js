@@ -8,6 +8,8 @@ import {
 import { createStackNavigator } from 'react-navigation';
 import SplashScreen from './Splash'
 
+//the page that s redirected to upon successful login
+
 export default class AuthHomeScreen extends Component {
     constructor(props) {
       super(props);
