@@ -1,9 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-//try to make SplashScreen work with the 'LoggedIn?' function instead
-//of being a component in Login Screen
-
 
 export default class SplashScreen extends React.Component {
 
