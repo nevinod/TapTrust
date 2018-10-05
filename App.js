@@ -7,6 +7,8 @@ import RegisterScreen from './components/Register'
 import AuthHomeScreen from './components/AuthHome'
 import AuthApprovalScreen from './components/AuthApproval'
 
+//stack navigator (list of all screens) to facilitate transitions
+
 
 export default createStackNavigator({
   Login: {
