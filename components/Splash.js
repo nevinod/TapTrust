@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-//change so that this screen is independent of loginscreen
 
 export default class SplashScreen extends React.Component {
 
