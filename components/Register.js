@@ -6,7 +6,6 @@ import {
     KeyboardAvoidingView, Linking
 } from 'react-native'
 
-//Register screen, where users can create an account
 
 export default class RegisterScreen extends Component {
     constructor(props) {
