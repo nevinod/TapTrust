@@ -10,8 +10,6 @@ import SplashScreen from './Splash'
 import AuthHomeScreen from './AuthHome'
 import AuthApprovalScreen from './AuthApproval'
 
-// Login screen, no API calls yet to confirm if username/pw is correct
-// also need to incorporate isLoggedIn
 
 export default class LoginScreen extends Component {
     constructor(props) {
