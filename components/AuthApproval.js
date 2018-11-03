@@ -6,7 +6,6 @@ import {
     KeyboardAvoidingView, Linking
 } from 'react-native'
 
-//This screen shows if the username/pw is approved
 
 export default class AuthApprovalScreen extends Component {
     constructor(props) {
