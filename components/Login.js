@@ -154,5 +154,9 @@ const styles = StyleSheet.create({
       height: 100,
       width: 100,
       marginBottom: '5%'
+    },
+    selectorText: {
+        height: 50,
+        color: 'white'
     }
 })
