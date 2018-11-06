@@ -157,6 +157,7 @@ const styles = StyleSheet.create({
     },
     selectorText: {
         height: 50,
-        color: 'white'
+        color: 'white',
+        textAlign: 'center'
     }
 })
